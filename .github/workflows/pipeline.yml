@@ -20,8 +20,13 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      # - name: ssh into VM
-
+      - name: ssh into VM
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          username: ${{secrets.USERNAME}}
+          host: ${{secrets.HOST}}
+          script: |
+            echo "We are in!!!"
       # - name: deploy app
       #   if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       #   run: flyctl deploy --remote-only
