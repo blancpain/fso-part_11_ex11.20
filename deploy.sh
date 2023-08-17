@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cd fso-part_11_ex11.20
-git pull
-
 cd frontend/
 npm install
 
