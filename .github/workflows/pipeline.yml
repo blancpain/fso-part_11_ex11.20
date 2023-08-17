@@ -23,6 +23,7 @@ jobs:
       - name: ssh into VM
         uses: appleboy/ssh-action@v1.0.0
         with:
+          key: ${{secrets.KEY}}
           username: ${{secrets.USERNAME}}
           host: ${{secrets.HOST}}
           script: |
