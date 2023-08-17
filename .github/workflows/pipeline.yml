@@ -54,7 +54,6 @@ jobs:
           description: commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].author.name }} broke the build :(
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
-          # !check why below is breaking
   tag_release:
     needs: [deployment_pipeline]
     runs-on: ubuntu-20.04
@@ -66,4 +65,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
-          # WITH_V: true
+          WITH_V: true
