@@ -27,7 +27,9 @@ jobs:
           username: ${{secrets.USERNAME}}
           host: ${{secrets.HOST}}
           script: |
-            echo "We are in!"
+            cd fso-part_11_ex11.20
+            git pull
+            cat hellofromlocal.txt
       # - name: deploy app
       #   if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
       #   run: flyctl deploy --remote-only
