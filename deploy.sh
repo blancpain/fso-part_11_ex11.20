@@ -13,7 +13,7 @@ npm install
 
 cd ..
 
-# remove old containers & images (volumes should persist)
+# remove old containers & images (volume should persist)
 docker compose down
 docker stop $(docker ps -aq)
 docker rm -f $(docker ps -aq)
