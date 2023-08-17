@@ -25,7 +25,9 @@ jobs:
           host: ${{secrets.HOST}}
           script: |
             cd fso-part_11_ex11.20
+            git stash
             git pull
+            git stash pop
       - name: SSH into VM and run deployment script
         uses: appleboy/ssh-action@v1.0.0
         with:

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Source NVM environment
+source /home/blancpain/.nvm/nvm.sh
+
+cd /home/blancpain/fso-part_11_ex11.20
+
 cd frontend/
 npm install
 
