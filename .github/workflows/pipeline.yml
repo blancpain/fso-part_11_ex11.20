@@ -43,7 +43,7 @@ jobs:
         if: success()
         with:
           severity: info
-          text: A new version of the blog app deployed
+          text: A new version of the blog app deployed at http://49.13.59.65/
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: test failture
         uses: rjstone/discord-webhook-notify@v1

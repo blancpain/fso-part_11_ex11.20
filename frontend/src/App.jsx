@@ -132,7 +132,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Blogs - POOOOOOOOOP</h2>
+      <h2>Blogs</h2>
       <Notification notification={notification} />
       {user !== null && loginStatus()}
       {user !== null && (
