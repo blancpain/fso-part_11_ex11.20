@@ -17,13 +17,23 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: ssh into VM and run deployment script
+      - name: SSH into VM and fetch latest source code
         uses: appleboy/ssh-action@v1.0.0
         with:
           key: ${{secrets.KEY}}
           username: ${{secrets.USERNAME}}
           host: ${{secrets.HOST}}
           script: |
+            cd fso-part_11_ex11.20
+            git pull
+      - name: Run deployment script
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          key: ${{secrets.KEY}}
+          username: ${{secrets.USERNAME}}
+          host: ${{secrets.HOST}}
+          script: |
+            cd fso-part_11_ex11.20
             chmod +x deploy.sh
             ./deploy.sh
       # - name: test success
